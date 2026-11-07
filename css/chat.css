@@ -2,6 +2,9 @@
     padding: 0px;
     margin: 0px;
 }
+body{
+    background-color: rgb(204, 235, 245);
+}
 
 .msg-box-shadow{
     border-radius: 5px;
@@ -12,7 +15,7 @@
     width: 1003px;
     margin:  auto;
     padding: 10px 0 0 0 ;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     
 }
 
