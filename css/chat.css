@@ -24,7 +24,7 @@
     background: #FFFFFF;
     line-height: 42px;
     color: #61666D;
-    font: 15px;
+    font-size: 15px;
 }
 
 #msg-content{
@@ -37,15 +37,16 @@
 #sidebar{
     width: 25%;
     float: left;
+    border-right:1px solid #61666d2e;
 }
 #sidebar-window{
-    width: 100%;
+    width: 90%;
     height: 36px;
-    border-right:1px solid #61666d2e;
+    /* background-color: antiquewhite; */
     border-bottom: 1px solid #61666d2e;
     line-height: 36px;
     padding-left: 24px;
-    font: 12px;
+    font-size: 12px;
     
 }
 #content-window{
@@ -54,25 +55,65 @@
     text-align: center;
      border-bottom: 1px solid #61666d2e;
      line-height: 36px;
-     font: 14px;
+     font-size: 14px;
+     /* background-color: aqua; */
      color: #18191c;
 }
 
 #content{
-    width: 75%;
+    width: 74.8%;
     float: left;
+    /* background-color: rgb(250, 215, 240); */
 }
-/* 在线 */
-.online{
 
-}
-/* 不在线 */
-.close{
-    
-    
-}
 .clearfix::after{
     clear: both;
     content: "";
     display: block;
+}
+#user-sidebar{
+    /* overflow-block: scroll; */
+}
+.chooseUser{
+    width: 85.5%;
+    height: 40px;
+    /* background-color: aqua; */
+    padding: 19px 12px 19px 24px;
+    font-size: 16px;
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.chooseUser:hover{
+    background-color: rgba(222, 222, 222, 0.323);
+}
+.situationDisplay-online{
+    background-color: greenyellow;
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+     line-height: 10px;
+}
+.situationDisplay-offline{
+    background-color: grey;
+    border-radius: 5px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+     line-height: 10px;
+}
+.unread-msg{
+    background-color: red;
+    border-radius: 6px;
+    width: 20px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 20px;
+}
+.username{
+    display: inline-block;
+    
 }
