@@ -29,7 +29,7 @@ function sidebarDisplay() {
             situation = 'online';
         }
         //未读消息显示
-        let unreadHtml = e.unread > 0 ? `<span class="unread-msg">${e.unrea > 99 ? "99+" : e.unread}</span>` : "";
+        let unreadHtml = e.unread > 0 ? `<span class="unread-msg">${e.unread > 99 ? "99+" : e.unread}</span>` : "";
         sidebarHtml += `<div data-id="${e.id}" data-name="${e.name}" class="chooseUser">
                         <div class="username">${e.name}
                             <span class="situationDisplay-${situation}"></span>
