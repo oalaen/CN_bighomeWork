@@ -1,0 +1,46 @@
+form {
+    margin: 0 auto;
+    padding: 0 20px;
+    border: 1px solid red;
+    width: 300px;
+}
+
+.center {
+    text-align: center;
+}
+
+div {
+    margin: 10px 0;
+}
+
+.btn {
+    width: 60px;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+}
+
+.vcode div {
+    float: left;
+}
+
+#picyzm {
+    width: 100px;
+    height: 40px;
+    padding-left: 10px;
+}
+
+span {
+    color: darkgray;
+}
+
+span.mark {
+    color: red;
+}
+
+/* 默认隐藏注册表单 */
+#registerFrm {
+    display: none;
+}

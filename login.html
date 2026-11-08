@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <form id="loginFrm">
+        <h2 class="center">用户登录</h2>
+        <div>
+            <label for="loginUser">用户名：</label>
+            <input type="text" id="loginUser" name="user" placeholder="请输入用户名" size="20">
+        </div>
+        <div>
+            <label for="loginPwd">密码：</label>
+            <input type="password" id="loginPwd" name="pwd1" placeholder="6位以上大小写数字混合" size="20">
+        </div>
+        <div class="center">
+            <input class="btn" type="submit" id="loginBtn" value="登&nbsp录">
+            <input name="resetBtn" class="btn" type="reset" value="重&nbsp置">
+        </div>
+        <div class="center">
+            <input type="button" class="btn" id="toRegBtn" value="去注册">
+        </div>
+    </form>
+
+    <form id="registerFrm">
+        <h2 class="center">用户注册</h2>
+        <div>
+            <label for="regUser">用户名：</label>
+            <input type="text" id="regUser" name="user" placeholder="请输入用户名" size="20">
+        </div>
+        <div>
+            <label for="regPwd1">密码：</label>
+            <input type="password" id="regPwd1" name="pwd1" placeholder="6位以上大小写数字混合" size="20">
+        </div>
+        <div>
+            <label for="regPwd2">确认密码：</label>
+            <input type="password" id="regPwd2" name="pwd2" placeholder="再次输入要一致" size="20">
+        </div>
+        <div>
+            <label>密码强度：</label>
+            <span id="wp">弱</span>
+            <span id="mp">中</span>
+            <span id="sp">强</span>
+        </div>
+        <div class="vcode">
+            <div>
+                <label for="vcode">校验码：</label>
+                <input type="text" id="vcode" name="vcode" placeholder="4位数字字母" size="10">
+            </div>
+            <div id="picyzm"></div>
+        </div>
+        <div class="center">
+            <input name="registerBtn" class="btn" type="submit" value="注&nbsp册">
+            <input name="resetBtn" class="btn" type="reset" value="重&nbsp置">
+        </div>
+        <div class="center">
+            <input type="button" class="btn" id="toLoginBtn" value="返回登录">
+        </div>
+    </form>
+
+    <script src="./js/gVerify.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

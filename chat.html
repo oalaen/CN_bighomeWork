@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>聊天界面</title>
+    <script>
+        // 本标签页还没有登录时，先进入登录页面。
+        if (sessionStorage.getItem("chatLogin") !== "true") {
+            window.location.replace("login.html");
+        }
+    </script>
     <link rel="stylesheet" href="./css/chat.css">
 </head>
 
