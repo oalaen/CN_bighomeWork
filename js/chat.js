@@ -2,15 +2,15 @@
 // 模拟数据
 //所有用户列表
 let userList = [
-    { id: 1, name: "张三" },
-    { id: 2, name: "李四" },
-    { id: 3, name: "王五" },
-    { id: 4, name: "陈六" },
-    { id: 5, name: "赵七" },
-    { id: 6, name: "林八" },
-    { id: 7, name: "魏九" },
-    { id: 8, name: "吴十" },
-    { id: 9, name: "杨十一" }
+    { id: 1, name: "张三" ,unread:23},
+    { id: 2, name: "李四" ,unread:64},
+    { id: 3, name: "王五" ,unread:43},
+    { id: 4, name: "陈六" ,unread:82},
+    { id: 5, name: "赵七" ,unread:100},
+    { id: 6, name: "林八" ,unread:999},
+    { id: 7, name: "魏九" ,unread:24},
+    { id: 8, name: "吴十" ,unread:1},
+    { id: 9, name: "杨十一" ,unread:9}
 ];
 
 //在线用户id数组
@@ -28,11 +28,13 @@ function sidebarDisplay() {
         if (onlineUser.includes(e.id)) {//若在线
             situation = 'online';
         }
-        sidebarHtml += `<div class="chooseUser">
+        //未读消息显示
+        let unreadHtml = e.unread > 0 ? `<span class="unread-msg">${e.unrea > 99 ? "99+" : e.unread}</span>` : "";
+        sidebarHtml += `<div data-id="${e.id}" data-name="${e.name}" class="chooseUser">
                         <div class="username">${e.name}
                             <span class="situationDisplay-${situation}"></span>
                         </div>
-                        <span class="unread-msg"></span>
+                        ${unreadHtml}
                     </div>`;
     });
     $('user-sidebar').innerHTML = sidebarHtml;
@@ -76,27 +78,7 @@ function getRecord(id) {
     }
     return chatRecords[id];
 }
-//先将所偶有已存用户逐行显示在sidebar中
-function sibedarDisplay() {
-    let sidebarHtml = "";
-    userList.forEach(e => {
-        let sidebarHtml = 'offline';//默认状态不在线
-        if (onlineUser.includes(e.id)) {
-            situation = 'online';
-        }
-        let activeClass = (e.id === activeId) ? "active" : "";//当前会话用户id与循环到的用户id相同，则加上active类
-        //↓若有未读消息则显示未读消息
-        let unredHtml = e.unread > 0 ? `<span class="unread-msg">${e.unrea > 99 ? "99+" : e.unread}</span>` : "";
-        //
-        sidebarHtml += `<div class="chooseUser ${activeClass}" data-id="${e.id}">
-                        <div class="username">${e.name}
-                            <span class="situationDisplay-${situation}"></span>
-                        </div>
-                        ${unredHtml}
-                    </div>`;
-    });
-    $('user-sidebar').innerHTML = sidebarHtml;
-}
+
 //重点！点击用户头像打开对应会话！
 function openChat(id) {
     activeId = id;
@@ -152,7 +134,7 @@ function sendMessage() {
 
 //左侧列表用事件委托，点击哪一项就打开哪一项
 $('user-sidebar').addEventListener('click', e => {
-    let item = e.target.closest('.chooseUser');
+    let item = e.target.closest('.chooseUser')  ;
     if (!item) {
         return;
     }
