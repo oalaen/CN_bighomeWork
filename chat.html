@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>聊天界面</title>
     <link rel="stylesheet" href="./css/chat.css">
 </head>
+
 <body>
     <div id="main">
         <div id="msg-header" class="msg-box-shadow">我的消息</div>
@@ -20,13 +22,35 @@
                     </div>
                 </div>
             </div>
+            <!--11.8更新选择会话-->
             <div id="content">
-                <div id="content-window">用户名（之后用变量表示）</div>
-                <div id="user-content"></div>
+                <div id="content-window">
+                    <span id="chat-title">请选择会话</span>
+                    <span id="chat-more" title="更多">⋮</span>
+                </div>
+                <div id="user-content">
+                    <div id="message-list">
+                        <div class="empty-tip">从左侧选择一个会话开始聊天</div>
+                    </div>
+                    <div id="chat-editor">
+                        <div id="editor-tools">
+                            <span class="tool-btn" id="tool-image" title="暂不支持发送图片">🖼</span>
+                            <span class="tool-btn" id="tool-emoji" title="插入表情">☺</span>
+                        </div>
+                        <textarea id="msg-input" maxlength="500" placeholder="请先选择一个会话" disabled></textarea>
+                        <div id="editor-footer">
+                            <span id="char-count">0/500</span>
+                            <button id="send-btn" type="button" disabled>发送</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
+    </div>
 
     </div>
     <script src="./js/chat.js"></script>
 </body>
+
 </html>

@@ -1,25 +1,26 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
 }
-body{
+
+body {
     background-color: rgb(204, 235, 245);
 }
 
-.msg-box-shadow{
+.msg-box-shadow {
     border-radius: 5px;
-    box-shadow: 0px 2px 3px 1px rgba(0,0,0, 0.15);
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
-#main{
+#main {
     width: 1003px;
-    margin:  auto;
-    padding: 10px 0 0 0 ;
+    margin: auto;
+    padding: 10px 0 0 0;
     /* background-color: blanchedalmond; */
-    
+
 }
 
-#msg-header{
+#msg-header {
     width: 963px;
     height: 42px;
     margin: 0px 10px;
@@ -30,19 +31,21 @@ body{
     font-size: 15px;
 }
 
-#msg-content{
+#msg-content {
     background: #FFFFFF;
     width: 983px;
     margin: 10px 0px 10px 10px;
     color: #61666D;
-   
+
 }
-#sidebar{
+
+#sidebar {
     width: 25%;
     float: left;
-    border-right:1px solid #61666d2e;
+    border-right: 1px solid #61666d2e;
 }
-#sidebar-window{
+
+#sidebar-window {
     width: 90%;
     height: 36px;
     /* background-color: antiquewhite; */
@@ -50,34 +53,45 @@ body{
     line-height: 36px;
     padding-left: 24px;
     font-size: 12px;
-    
-}
-#content-window{
-     width: 100%;
-    height: 36px;
-    text-align: center;
-     border-bottom: 1px solid #61666d2e;
-     line-height: 36px;
-     font-size: 14px;
-     /* background-color: aqua; */
-     color: #18191c;
+
 }
 
-#content{
+#content-window {
+    width: 100%;
+    height: 36px;
+    text-align: center;
+    border-bottom: 1px solid #61666d2e;
+    line-height: 36px;
+    font-size: 14px;
+    /* background-color: aqua; */
+    color: #18191c;
+    flex: 0 0 36px;
+}
+
+#content {
     width: 74.8%;
     float: left;
     /* background-color: rgb(250, 215, 240); */
+    height: calc(100vh - 110px);
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
 }
 
-.clearfix::after{
+.clearfix::after {
     clear: both;
     content: "";
     display: block;
 }
-#user-sidebar{
+
+#user-sidebar {
     /* overflow-block: scroll; */
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
 }
-.chooseUser{
+
+.chooseUser {
     width: 85.5%;
     height: 40px;
     /* background-color: aqua; */
@@ -87,28 +101,34 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    cursor: pointer;
+  
+
 }
-.chooseUser:hover{
+
+.chooseUser:hover {
     background-color: rgba(222, 222, 222, 0.323);
 }
-.situationDisplay-online{
+
+.situationDisplay-online {
     background-color: greenyellow;
     border-radius: 5px;
     width: 10px;
     height: 10px;
     display: inline-block;
-     line-height: 10px;
+    line-height: 10px;
 }
-.situationDisplay-offline{
+
+.situationDisplay-offline {
     background-color: grey;
     border-radius: 5px;
     width: 10px;
     height: 10px;
     display: inline-block;
-     line-height: 10px;
+    line-height: 10px;
 }
-.unread-msg{
+
+.unread-msg {
     background-color: red;
     border-radius: 6px;
     width: 20px;
@@ -116,7 +136,182 @@ body{
     display: inline-block;
     margin-right: 20px;
 }
-.username{
+
+.username {
     display: inline-block;
-    
+
+}
+/* ==================== 右侧聊天会话区 ==================== */
+#chat-title{
+    max-width: 60%;
+    font-size: 14px;
+    color: #18191c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#chat-more{
+    position: absolute;
+    right: 8px;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #99a2aa;
+    cursor: pointer;
+   
+}
+#chat-more:hover{
+    color: #00aeec;
+}
+
+#user-content{
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#message-list{
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 18px 22px 6px;
+    background-color: #fff;
+}
+
+.empty-tip{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #99a2aa;
+}
+
+.msg-time{
+    margin: 4px 0 18px;
+    text-align: center;
+    font-size: 12px;
+    color: #99a2aa;
+}
+
+.msg-item{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+.msg-item.self{
+    justify-content: flex-end;
+}
+
+.avatar{
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: #fff;
+   
+}
+
+.msg-bubble{
+    max-width: 62%;
+    margin: 0 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #f1f2f3;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #18191c;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+.msg-item.self .msg-bubble{
+    background-color: #00aeec;
+    color: #fff;
+}
+
+#chat-editor{
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px 10px;
+    border-top: 1px solid #61666d2e;
+    background-color: #fff;
+}
+
+#editor-tools{
+    display: flex;
+    gap: 16px;
+    font-size: 17px;
+    line-height: 20px;
+    color: #99a2aa;
+}
+
+.tool-btn{
+    cursor: pointer;
+
+}
+.tool-btn:hover{
+    color: #00aeec;
+}
+
+#msg-input{
+    height: 64px;
+    margin: 6px 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #18191c;
+}
+#msg-input::placeholder{
+    color: #99a2aa;
+}
+#msg-input:disabled{
+    cursor: not-allowed;
+}
+
+#editor-footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+#char-count{
+    font-size: 12px;
+    color: #99a2aa;
+}
+
+#send-btn{
+    width: 80px;
+    height: 30px;
+    border: 1px solid #ccd0d7;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #61666d;
+    cursor: pointer;
+    outline: none;
+}
+#send-btn:hover:not(:disabled){
+    border-color: #00aeec;
+    color: #00aeec;
+}
+#send-btn:disabled{
+    border-color: #e3e5e7;
+    color: #c9ccd0;
+    cursor: default;
 }
